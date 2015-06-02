@@ -1,0 +1,69 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Properties="clr-namespace:SyncApplication.Properties" x:Class="SyncApplication.MainWindow"
+        Title="Sync Folder for UI Automation" Height="350" Width="525" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" WindowStyle="ThreeDBorderWindow">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+        <TabControl HorizontalAlignment="Left" Height="321" Margin="0,0,0,-0.2" VerticalAlignment="Top" Width="518">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/fitnesselogo.jpg" Width="15" Stretch="Fill"/>
+                        <TextBlock Text="Wiki Sync" Foreground="Green"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid Background="#FFE5E5E5" Margin="0,0,0.8,-0.4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="31*"/>
+                        <ColumnDefinition Width="474*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="syncButton"  HorizontalAlignment="Left" Margin="213.8,89,0,0" VerticalAlignment="Top" Click="SyncButton_Click" Width="54" Foreground="#FF0C38EB" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Grid.Column="1" Height="32" IsHitTestVisible="True" IsTabStop="True">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Outlook-tech-support1.ico" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <TextBox x:Name="browseTextbox" HorizontalAlignment="Left" Text="Please select the folder you want to sync." Height="57" TextWrapping="Wrap" VerticalAlignment="Top" Width="402" IsEnabled="False" Background="#FF7A5B5B" Margin="29.8,23,0,0" Grid.Column="1" >
+                        <TextBox.BorderBrush>
+                            <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                                <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                                <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                                <GradientStop Color="#FF244567" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.BorderBrush>
+                    </TextBox>
+                    <TextBlock x:Name="textBlock" Text="Have two files in the same location as this program: IP_Address.txt (contains ip address) and Desired_Folder_Structure.txt (contains folder structure)." ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="29.8,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="132" Width="402" IsEnabled="False" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Foreground="#FF05094A" Grid.Column="1"/>
+                    <Button x:Name="buttonClearLog" Content="Clear Logs" HorizontalAlignment="Left" Margin="356.8,236,0,0" VerticalAlignment="Top" Width="75" Click="buttonClearLog_Click" Foreground="#FF0C38EB" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Grid.Column="1"/>
+                    <Button x:Name="browseButton" Content="Browse" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BrowseButton_Click" Height="21" Foreground="#FF0C38EB" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Margin="356.8,59,0,0" RenderTransformOrigin="0.805,0.409" Width="75" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/dll.png" Width="15"/>
+                        <TextBlock Text="DLL Sync" Foreground="RosyBrown"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/report.jpg" Width="15" Height="15"/>
+                        <TextBlock Text="Report Sync" Foreground="Blue">
+                            <TextBlock.Background>
+                                <ImageBrush/>
+                            </TextBlock.Background>
+                        </TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+
+                <Grid Background="#FFE5E5E5" Margin="0,0,0.8,-0.4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="479*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnReportSync" Content="Sync Last Run" HorizontalAlignment="Left" Margin="180.4,125,0,0" VerticalAlignment="Top" Width="92" Height="22" Click="btnReportSync_Click" Grid.Column="1" Background="#FFB3D1EF"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
